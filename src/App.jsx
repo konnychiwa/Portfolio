@@ -2,6 +2,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import WelcomeScreen from './pages/WelcomeScreen';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import AnimatedBackground from './components/Background';
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -12,7 +15,13 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
         )}
       </AnimatePresence>
 
-      {!showWelcome && <></>}
+      {!showWelcome && (
+        <>
+          <Navbar />
+          <AnimatedBackground />
+          <Home />
+        </>
+      )}
     </>
   );
 };
