@@ -104,7 +104,6 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
 
           <div className="relative min-h-screen flex items-center justify-center px-4">
             <div className="w-full max-w-4xl mx-auto">
-              {/* Icons */}
               <motion.div
                 className="flex justify-center gap-3 sm:gap-4 md:gap-8 mb-6 sm:mb-8 md:mb-12"
                 variants={childVariants}
@@ -120,7 +119,6 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                 ))}
               </motion.div>
 
-              {/* Welcome Text */}
               <motion.div
                 className="text-center mb-6 sm:mb-8 md:mb-12"
                 variants={childVariants}
