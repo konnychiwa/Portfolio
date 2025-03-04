@@ -5,7 +5,7 @@ import {
   Mail,
   ExternalLink,
   Instagram,
-  Sparkles,
+  Flame,
 } from 'lucide-react';
 import Spline from '@splinetool/react-spline';
 import AOS from 'aos';
@@ -22,7 +22,7 @@ const StatusBadge = memo(() => (
       <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
       <div className="relative px-3 sm:px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
         <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-transparent bg-clip-text sm:text-sm text-[0.7rem] font-medium flex items-center">
-          <Sparkles className="sm:w-4 sm:h-4 w-3 h-3 mr-2 text-blue-400" />
+          <Flame className="sm:w-4 sm:h-4 w-3 h-3 mr-2 text-blue-400" />
           Rendilo divertente, goditi ciò che crei!
         </span>
       </div>
@@ -216,8 +216,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Full-screen scalable Spline model (hidden below 768px) */}
-      <div className="hidden md:flex absolute inset-0 w-full h-full items-center justify-center">
+      {/* Full-screen scalable Spline model*/}
+      <div className="md:flex absolute inset-0 w-full h-full items-center justify-center">
         <Spline
           scene="https://prod.spline.design/kHk9eJDto-TdqiAZ/scene.splinecode"
           className="w-full h-full max-w-none"
