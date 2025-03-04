@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 
-.app {
-  width: 80%;
-  margin: auto;
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.3) rgba(12, 5, 53, 0.356);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background: #030014;
+  scroll-behavior: smooth !important;
 }
