@@ -15,13 +15,15 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
         )}
       </AnimatePresence>
 
-      {!showWelcome && (
-        <>
-          <Navbar />
-          <AnimatedBackground />
-          <Home />
-        </>
-      )}
+      <div
+        className={`transition-opacity duration-1000 ${
+          showWelcome ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
+      >
+        <Navbar />
+        <AnimatedBackground />
+        <Home />
+      </div>
     </>
   );
 };
