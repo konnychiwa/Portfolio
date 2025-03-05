@@ -88,7 +88,7 @@ const Navbar = () => {
               className="text-xl font-bold bg-gradient-to-r from-[#8f00ff] to-[#6366f1] bg-clip-text text-transparent flex items-center cursor-default"
             >
               <img
-                src="/public/logo.svg"
+                src="/logo.svg"
                 className="w-8 h-8 mr-2 bg-transparent"
                 alt="Konny"
               />
