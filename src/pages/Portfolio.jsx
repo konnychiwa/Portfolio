@@ -32,7 +32,14 @@ const CertificatesData = [
     description: 'Agosto 2024 - Febbraio 2025',
     image: '/certificates/fullstack.png',
     tag: ['Certificati'],
-    previewUrl: '/certificates/fullstack.png',
+    previewUrl: '/certificates/fullstack.pdf',
+  },
+  {
+    title: 'Attestato B2 di Inglese',
+    description: '17 Maggio 2023',
+    image: '/certificates/b2_inglese.png',
+    tag: ['Certificati'],
+    previewUrl: '/certificates/KonaraAngelo_B2.pdf',
   },
 ];
 
@@ -61,6 +68,7 @@ const techStacks = [
   { icon: '/skills/nodejs.svg', language: 'Node.js', tag: ['Competenze'] },
   { icon: '/skills/express.svg', language: 'Express.js', tag: ['Competenze'] },
   { icon: '/skills/mongodb.svg', language: 'MongoDB', tag: ['Competenze'] },
+  { icon: '/skills/vercel.svg', language: 'Vercel', tag: ['Competenze'] },
   { icon: '/skills/git.svg', language: 'Git', tag: ['Competenze'] },
   {
     icon: '/skills/3dmodel.svg',
