@@ -1,6 +1,5 @@
-import React, { useEffect, memo } from 'react';
-import { FileText, Award, Code } from 'lucide-react';
-import AOS from 'aos';
+import React, { memo } from 'react';
+import { FileText, Award, Code, WandSparkles } from 'lucide-react';
 import 'aos/dist/aos.css';
 
 // Memoized Components
@@ -20,7 +19,8 @@ const Header = memo(() => (
       data-aos="zoom-in-up"
       data-aos-duration="800"
     >
-      Trasformo idee in realtà
+      Trasformo idee in realtà, lasciare il segno è ciò che desidero
+      <WandSparkles className="w-5 h-5 text-purple-400" />
     </p>
   </div>
 ));
@@ -42,7 +42,7 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
 
           <img
-            src="/public/me.png"
+            src="/me.png"
             alt="Pamoda Angelo Konara"
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
             loading="lazy"
@@ -119,14 +119,14 @@ const AboutPage = () => {
               data-aos-duration="1000"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                Hello, I'm
+                Ciao, io sono
               </span>
               <span
                 className="block mt-2 text-gray-200"
                 data-aos="fade-right"
                 data-aos-duration="1300"
               >
-                Eki Zulfar Rachman
+                Pamoda Angelo Konara
               </span>
             </h2>
 
@@ -135,15 +135,19 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              seorang siswa Teknik Jaringan Komputer dan Telekomunikasi yang
-              tertarik dalam pengembangan Front-End. Saya berfokus pada
-              menciptakan pengalaman digital yang menarik dan selalu berusaha
-              memberikan solusi terbaik dalam setiap proyek.
+              Giovane professionista con forte determinazione alla crescita
+              professionale. Posso contare su una buona competenza specialistica
+              in ambito informatico nella progettazione e gestione di siti web,
+              in virtù della quale posso sostenere agevolmente le esigenze
+              aziendali dimostrando capacità di raggiungere gli obiettivi
+              prefissati. So inserirmi rapidamente in nuove organizzazioni di
+              lavoro grazie a buone doti comunicative, predisposizione al lavoro
+              di squadra e attitudine positiva e propositiva
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a
-                href="/public/CV di Pamoda Angelo Konara.pdf"
+                href="/CV_di_PamodaAngeloKonara.pdf"
                 download="CV di Pamoda Angelo Konara.pdf"
                 className="w-full lg:w-auto"
               >
@@ -164,24 +168,13 @@ const AboutPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
           {/* Directly show the certificate card */}
-          <a href="#Home">
-            <div className="cursor-pointer">
-              <StatCard
-                icon={Code}
-                color="from-[#a855f7] to-[#6366f1]"
-                label="Progetti"
-                description="Tutto quello che creo a portata di mano"
-                animation="fade-up"
-              />
-            </div>
-          </a>
-          <a href="#Home">
+          <a href="#Portfolio">
             <div className="cursor-pointer">
               <StatCard
                 icon={Award}
                 color="from-[#a855f7] to-[#6366f1]"
-                label="Certificati"
-                description="Le competenze che mi servono"
+                label="Progetti e Certificati"
+                description="Tutte le mie competenze a portata di mano"
                 animation="fade-up"
               />
             </div>

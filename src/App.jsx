@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AnimatedBackground from './components/Background';
 import About from './pages/About';
+import Portfolio from './pages/Portfolio';
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -25,10 +26,12 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
         <AnimatedBackground />
         <Home />
         <About />
+        <Portfolio />
       </div>
     </>
   );
 };
+
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
