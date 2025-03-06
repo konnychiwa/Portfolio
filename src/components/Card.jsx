@@ -1,7 +1,7 @@
 import React from 'react';
 import { Code, Eye } from 'lucide-react';
 
-const CardProject = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
+const Card = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   return (
     <div>
       <div
@@ -35,4 +35,4 @@ const CardProject = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   );
 };
 
-export default CardProject;
+export default Card;

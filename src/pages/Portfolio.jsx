@@ -1,33 +1,71 @@
-import React, { memo } from 'react'; // Add the import for memo
-import CardProject from '../components/CardProject';
+'use client';
+import React, { memo, useState } from 'react';
+import Card from '../components/Card';
+import Certificate from '../components/Certificate';
+import PortfolioTag from '../components/PortfolioTag';
+import TechStackIcon from '../components/TechStackIcon';
 
-const Data = [
+const ProjectsData = [
   {
-    id: 1,
-    title: 'Cookio',
-    description: 'Desc 1',
+    title: 'Cookio, Pannello Utente',
+    description:
+      "Pannello utente di un app di un ristorante per l'ordinazione online del cibo",
     image: '/projects/cookio.png',
-    tag: ['Project'],
-    gitUrl: 'https://github.com/konnychiwa',
+    tag: ['Progetti'],
+    gitUrl: 'https://github.com/konnychiwa/Start2impact-progetto-FullStack',
     previewUrl: 'https://user-cookio.vercel.app/',
   },
   {
-    id: 2,
-    title: 'Cookio',
-    description: 'Desc 2',
-    image: '/projects/cookio.png',
-    tag: ['Project'],
-    gitUrl: 'https://github.com/konnychiwa',
-    previewUrl: 'https://user-cookio.vercel.app/',
+    title: 'Cookio, Pannello Admin',
+    description:
+      'Pannello admin di un app di un ristorante per la gestione degli ordini e gestione del menu',
+    image: '/projects/cookioAdmin.png',
+    tag: ['Progetti'],
+    gitUrl: 'https://github.com/konnychiwa/Start2impact-progetto-FullStack',
+    previewUrl: 'https://admin-cookio.vercel.app/',
+  },
+];
+
+const CertificatesData = [
+  {
+    title: 'Certificato Full Stack',
+    description: 'Agosto 2024 - Febbraio 2025',
+    image: '/certificates/fullstack.png',
+    tag: ['Certificati'],
+    previewUrl: '/certificates/fullstack.png',
+  },
+];
+
+const techStacks = [
+  { icon: '/skills/html.svg', language: 'HTML', tag: ['Competenze'] },
+  { icon: '/skills/css.svg', language: 'CSS', tag: ['Competenze'] },
+  {
+    icon: '/skills/javascript.svg',
+    language: 'JavaScript',
+    tag: ['Competenze'],
   },
   {
-    id: 3,
-    title: 'Cookio',
-    description: 'Desc 2',
-    image: '/projects/cookio.png',
-    tag: ['Project'],
-    gitUrl: 'https://github.com/konnychiwa',
-    previewUrl: 'https://user-cookio.vercel.app/',
+    icon: '/skills/typescript.svg',
+    language: 'TypeScript',
+    tag: ['Competenze'],
+  },
+  {
+    icon: '/skills/tailwind.svg',
+    language: 'Tailwind CSS',
+    tag: ['Competenze'],
+  },
+  { icon: '/skills/bootstrap.svg', language: 'Bootstrap', tag: ['Competenze'] },
+  { icon: '/skills/reactjs.svg', language: 'React', tag: ['Competenze'] },
+  { icon: '/skills/vite.svg', language: 'Vite', tag: ['Competenze'] },
+  { icon: '/skills/nextjs.svg', language: 'Next.js', tag: ['Competenze'] },
+  { icon: '/skills/nodejs.svg', language: 'Node.js', tag: ['Competenze'] },
+  { icon: '/skills/express.svg', language: 'Express.js', tag: ['Competenze'] },
+  { icon: '/skills/mongodb.svg', language: 'MongoDB', tag: ['Competenze'] },
+  { icon: '/skills/git.svg', language: 'Git', tag: ['Competenze'] },
+  {
+    icon: '/skills/3dmodel.svg',
+    language: 'Modellazione 3D',
+    tag: ['Competenze'],
   },
 ];
 
@@ -46,23 +84,63 @@ const Header = memo(() => (
 ));
 
 const Portfolio = () => {
+  const [tag, setTag] = useState('Progetti');
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  };
+
   return (
     <div
       className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0"
       id="Portfolio"
     >
       <Header />
+      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+        <PortfolioTag
+          onClick={handleTagChange}
+          name="Progetti"
+          isSelected={tag === 'Progetti'}
+        />
+        <PortfolioTag
+          onClick={handleTagChange}
+          name="Certificati"
+          isSelected={tag === 'Certificati'}
+        />
+        <PortfolioTag
+          onClick={handleTagChange}
+          name="Competenze"
+          isSelected={tag === 'Competenze'}
+        />
+      </div>
       <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {Data.map((project) => (
-          <CardProject
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.image}
-            gitUrl={project.gitUrl}
-            previewUrl={project.previewUrl}
+        {ProjectsData.filter((project) => project.tag.includes(tag)).map(
+          (project) => (
+            <Card
+              title={project.title}
+              description={project.description}
+              imgUrl={project.image}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            />
+          )
+        )}
+        {CertificatesData.filter((certificate) =>
+          certificate.tag.includes(tag)
+        ).map((certificate) => (
+          <Certificate
+            title={certificate.title}
+            description={certificate.description}
+            imgUrl={certificate.image}
+            previewUrl={certificate.previewUrl}
           />
         ))}
+      </div>
+      <div className="grid md:grid-cols-6 gap-6 md:gap-10">
+        {techStacks
+          .filter((tech) => tech.tag.includes(tag))
+          .map((tech) => (
+            <TechStackIcon TechStackIcon={tech.icon} Language={tech.language} />
+          ))}
       </div>
     </div>
   );

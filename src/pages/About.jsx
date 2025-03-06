@@ -168,24 +168,13 @@ const AboutPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
           {/* Directly show the certificate card */}
-          <a href="#Home">
-            <div className="cursor-pointer">
-              <StatCard
-                icon={Code}
-                color="from-[#a855f7] to-[#6366f1]"
-                label="Progetti"
-                description="Tutto quello che creo a portata di mano"
-                animation="fade-up"
-              />
-            </div>
-          </a>
-          <a href="#Home">
+          <a href="#Portfolio">
             <div className="cursor-pointer">
               <StatCard
                 icon={Award}
                 color="from-[#a855f7] to-[#6366f1]"
-                label="Certificati"
-                description="Le competenze che mi servono"
+                label="Progetti e Certificati"
+                description="Tutte le mie competenze a portata di mano"
                 animation="fade-up"
               />
             </div>
