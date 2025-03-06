@@ -32,7 +32,7 @@ const CertificatesData = [
     description: 'Agosto 2024 - Febbraio 2025',
     image: '/certificates/fullstack.png',
     tag: ['Certificati'],
-    previewUrl: '/certificates/fullstack.pdf',
+    previewUrl: '/certificates/FullStack.pdf',
   },
   {
     title: 'Attestato B2 di Inglese',
