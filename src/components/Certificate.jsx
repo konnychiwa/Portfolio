@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Eye } from 'lucide-react';
+import { Eye } from 'lucide-react';
 
 const Certificate = ({ imgUrl, title, description, previewUrl }) => {
   return (
