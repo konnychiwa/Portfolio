@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import AnimatedBackground from './components/Background';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
+import ContactPage from './pages/Contac';
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -27,6 +28,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
         <Home />
         <About />
         <Portfolio />
+        <ContactPage />
       </div>
     </>
   );

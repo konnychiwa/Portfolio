@@ -135,7 +135,7 @@ const Portfolio = () => {
           />
         ))}
       </div>
-      <div className="grid md:grid-cols-6 gap-6 md:gap-10">
+      <div className="grid md:grid-cols-6 gap-4 md:gap-8">
         {techStacks
           .filter((tech) => tech.tag.includes(tag))
           .map((tech) => (
