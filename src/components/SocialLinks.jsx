@@ -46,7 +46,7 @@ const SocialLinks = () => {
 
       <div className="flex flex-col gap-4">
         {/* Container to center the social links */}
-        <div className="mx-auto flex gap-4 max-w-xl w-full justify-center">
+        <div className="mx-auto flex flex-col gap-4 max-w-xl w-full md:flex-row md:gap-4 md:justify-center">
           {[linkedin, github, instagram].map((link) => (
             <a
               key={link.name}
@@ -76,7 +76,11 @@ const SocialLinks = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col items-center text-center min-w-0">
+              <div
+                className={`flex flex-col items-center text-center min-w-0 ${
+                  link.name === 'LinkedIn' ? 'items-start text-left' : ''
+                }`}
+              >
                 <span className="text-sm font-bold text-gray-200 group-hover:text-white transition-colors duration-300">
                   {link.displayName}
                 </span>
