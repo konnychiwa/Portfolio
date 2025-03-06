@@ -5,10 +5,8 @@ import Swal from 'sweetalert2';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import emailjs from 'emailjs-com';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Import the styles for Toastify
 
-const ContactPage = () => {
+const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -52,10 +50,10 @@ const ContactPage = () => {
       .then(() => {
         showAlert();
       })
-      .catch((error) => {
+      .catch(() => {
         Swal.fire({
           title: 'Errore!',
-          text: 'il tuo messaggio non è stato inviato, Riprova!',
+          text: 'Il tuo messaggio non è stato inviato, riprova!',
           icon: 'error',
           timer: 2000,
           timerProgressBar: true,
@@ -65,8 +63,8 @@ const ContactPage = () => {
 
   const showAlert = () => {
     Swal.fire({
-      title: 'Success!',
-      text: 'Il tuo messaggio è stato mandato con successo!',
+      title: 'Successo!',
+      text: 'Il tuo messaggio è stato inviato con successo!',
       icon: 'success',
       confirmButtonColor: '#6366f1',
       timer: 2000,
@@ -101,7 +99,7 @@ const ContactPage = () => {
           className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2"
         >
           Sto cercando nuove opportunità, se hai bisogno di qualcosa o anche per
-          farmi una domanda, compila il form e ti contatterò appena posso.
+          farmi delle domande, compila il form e ti contatterò appena posso.
         </p>
       </div>
 
@@ -148,7 +146,7 @@ const ContactPage = () => {
                 <input
                   type="email"
                   id="email_id"
-                  placeholder="example@gmail.com"
+                  placeholder="esempio@gmail.com"
                   className="w-full p-4 pl-12 bg-white/10 rounded-xl border border-white/20 placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-[#6366f1]/30 transition-all duration-300 hover:border-[#6366f1]/30 disabled:opacity-50"
                   required
                 />
@@ -188,4 +186,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Contact;
