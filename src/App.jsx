@@ -5,6 +5,9 @@ import WelcomeScreen from './pages/WelcomeScreen';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AnimatedBackground from './components/Background';
+import About from './pages/About';
+import Portfolio from './pages/Portfolio';
+import ContactPage from './pages/Contac';
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -15,16 +18,22 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
         )}
       </AnimatePresence>
 
-      {!showWelcome && (
-        <>
-          <Navbar />
-          <AnimatedBackground />
-          <Home />
-        </>
-      )}
+      <div
+        className={`transition-opacity duration-1000 ${
+          showWelcome ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
+      >
+        <Navbar />
+        <AnimatedBackground />
+        <Home />
+        <About />
+        <Portfolio />
+        <ContactPage />
+      </div>
     </>
   );
 };
+
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
