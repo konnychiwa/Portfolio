@@ -88,7 +88,7 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ['Appassionato di informatica', 'Sempre al passo'];
+const WORDS = ['Appassionato di Sviluppo Web', 'Appassionato di AI'];
 const SOCIAL_LINKS = [
   { icon: Github, link: 'https://github.com/konnychiwa' },
   { icon: Linkedin, link: 'https://www.linkedin.com/in/pamoda-angelo-konara/' },
@@ -100,8 +100,18 @@ const Home = () => {
   const [isTyping, setIsTyping] = useState(true);
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
+
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
+
+  // Handle screen resize to determine when to show Spline
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Optimize AOS initialization
   useEffect(() => {
@@ -115,11 +125,6 @@ const Home = () => {
     initAOS();
     window.addEventListener('resize', initAOS);
     return () => window.removeEventListener('resize', initAOS);
-  }, []);
-
-  useEffect(() => {
-    setIsLoaded(true);
-    return () => setIsLoaded(false);
   }, []);
 
   // Optimize typing effect
@@ -216,13 +221,15 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Full-screen scalable Spline model*/}
-      <div className="md:flex absolute inset-0 w-full h-full items-center justify-center">
-        <Spline
-          scene="https://prod.spline.design/kHk9eJDto-TdqiAZ/scene.splinecode"
-          className="w-full h-full max-w-none"
-        />
-      </div>
+      {/* Conditionally render Spline component */}
+      {isLargeScreen && (
+        <div className="md:flex absolute inset-0 w-full h-full items-center justify-center">
+          <Spline
+            scene="https://prod.spline.design/kHk9eJDto-TdqiAZ/scene.splinecode"
+            className="w-full h-full max-w-none"
+          />
+        </div>
+      )}
     </div>
   );
 };
