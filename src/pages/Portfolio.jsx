@@ -124,6 +124,7 @@ const Portfolio = () => {
         {ProjectsData.filter((project) => project.tag.includes(tag)).map(
           (project) => (
             <Card
+              key={project.title} // <-- Added key prop
               title={project.title}
               description={project.description}
               imgUrl={project.image}
@@ -136,6 +137,7 @@ const Portfolio = () => {
           certificate.tag.includes(tag)
         ).map((certificate) => (
           <Certificate
+            key={certificate.title} // <-- Added key prop
             title={certificate.title}
             description={certificate.description}
             imgUrl={certificate.image}
@@ -143,11 +145,16 @@ const Portfolio = () => {
           />
         ))}
       </div>
+
       <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-6 xl:grid-cols-6">
         {techStacks
           .filter((tech) => tech.tag.includes(tag))
           .map((tech) => (
-            <TechStackIcon TechStackIcon={tech.icon} Language={tech.language} />
+            <TechStackIcon
+              key={tech.language} // <-- Added key prop
+              TechStackIcon={tech.icon}
+              Language={tech.language}
+            />
           ))}
       </div>
     </div>

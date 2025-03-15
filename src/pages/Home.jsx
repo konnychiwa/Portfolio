@@ -184,13 +184,13 @@ const Home = () => {
               </div>
 
               {/* Description */}
-              <p
+              <div
                 className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                 data-aos="fade-up"
                 data-aos-delay="1000"
               >
                 <StatusBadge />
-              </p>
+              </div>
 
               {/* CTA Buttons */}
               <div
