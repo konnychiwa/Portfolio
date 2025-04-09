@@ -71,6 +71,21 @@ const techStacks = [
   { icon: '/skills/vercel.svg', language: 'Vercel', tag: ['Competenze'] },
   { icon: '/skills/git.svg', language: 'Git', tag: ['Competenze'] },
   {
+    icon: '/skills/python.svg',
+    language: 'Python',
+    tag: ['Competenze'],
+  },
+  {
+    icon: '/skills/pytorch.svg',
+    language: 'PyTorch',
+    tag: ['Competenze'],
+  },
+  {
+    icon: '/skills/python.svg',
+    language: 'FastAI',
+    tag: ['Competenze'],
+  },
+  {
     icon: '/skills/3dmodel.svg',
     language: 'Modellazione 3D',
     tag: ['Competenze'],
