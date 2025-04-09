@@ -225,7 +225,7 @@ const Home = () => {
       {isLargeScreen && (
         <div className="md:flex absolute inset-0 w-full h-full items-center justify-center">
           <Spline
-            scene="https://prod.spline.design/kHk9eJDto-TdqiAZ/scene.splinecode"
+            scene="https://prod.spline.design/eQT6J9da17iRaFP6/scene.splinecode"
             className="w-full h-full max-w-none"
           />
         </div>
